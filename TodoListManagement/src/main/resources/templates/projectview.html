@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./style6.css">
+<link rel="stylesheet" href="./style7.css">
+</head>
+
+<body style="background-color: #9A616D;">
+
+<div class="topnav">
+<span class="left">SMART PROJECTS</span>
+  <a class="active" href="./logout">Log out</a>
+  <span class="right" th:text="${user}">News</span>
+  
+</div>
+<div id="header">
+
+<h1 th:text="${dto.title}" >  </h1>
+<p> Created Date :<span th:text="${dto.createdDate}"></span></p>
+<p> No of ToDos :<span th:text="${#lists.size(dto.todos)}"></span></p>
+  </div>
+  <div>
+<h1 align="center">ToDos</h1><br>
+</div>
+<div class="container">
+
+<div class="card" th:each="todo ,iStat : ${dto.todos}" >
+    <div class="card-text">
+    <p class="card-meal-type"> ToDo <span th:text="${iStat.index +1}" ></span></p>
+    <h2 class="card-title"><span th:text="${todo.description}" ></span></h2>
+    <p class="card-body"> Created on <span th:text="${todo.createdDate}" ></span></p>
+    <p class="card-body">Updated on <span th:text="${todo.updatedDate}"></span></p>
+    <p class="card-body"> Status is <span th:text="${todo.status}"></span></p>
+  </div>
+  <div class="card-price"><a th:href="@{./edit?(id=${todo.id})}">edit</a></div>
+</div>
+  
+<div class="card1">
+    <div class="card-text1">
+    <p class="card.title"><a th:href="@{./addTodo?(id=${dto.id})}"> Add more Todos </a></p>
+  </div>
+  </div>
+</div>
+<a th:href="@{./home1}"> HOME </a>
+</body>
+</html>

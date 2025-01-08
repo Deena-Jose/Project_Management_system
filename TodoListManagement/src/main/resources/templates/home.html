@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="icon" href=
+"./images/taskimg.png"
+        type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="./style2.css">
+<link rel="stylesheet" href="./style7.css">
+</head>
+<body style="background-color: #9A616D;">
+
+<div class="topnav">
+<span class="left">SMART PROJECTS</span>
+  <a class="active" href="./logout">Log out</a>
+  <span class="right" th:text="${user}">News</span>
+  
+</div>
+<div>
+<ol style="--length: 5" role="list">
+	<li style="--i: 1">
+		<h3> <a th:href="newProject">Create Project</a></h3>
+		
+	</li>
+	<li style="--i: 2">
+		<h3> <a href="projectList">List all projects </a></h3>
+		
+	</li>
+	<li style="--i: 3">
+		<h3> <a href="viewProject">View Project</a></h3>
+		
+	</li>
+	</ol>
+	
+	</div>
+</body>
+</html>

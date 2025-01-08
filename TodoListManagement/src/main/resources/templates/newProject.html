@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./style3.css">
+<link rel="stylesheet" href="./style7.css">
+
+</head>
+<body style="background-color: #9A616D;">
+<div class="topnav">
+<span class="left">SMART PROJECTS</span>
+  <a class="active" href="./logout">Log out</a>
+  <span class="right" th:text="${user}">News</span>
+  
+</div>
+<div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Enter Project Details</h3>
+                          <form  method="post" action="createProject"  class="requires-validation" >
+
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="title" placeholder="Project Name" required>
+                               
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="createdDate1" placeholder="Created Date" required>
+                                 
+                            </div>
+                             
+                             <h3>Enter Todo Details</h3>
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="description" placeholder="Description" required>
+                               
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="createdDate" placeholder="Created Date" required>
+                                 
+                            </div>
+                            <p>Status<p> 
+                            <div class="col-md-12">
+                             <select name="status">
+                             <option value="completed">completed</option>
+                              <option value="pending">pending</option>
+                               </select>
+                               </div>
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">ADD PROJECT</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
